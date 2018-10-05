@@ -9,8 +9,7 @@ with the CloudFront IP range changes.
 ## Security Group
 
 This Lambda function updates a total possibility of 4 EC2 security groups tagged as the following:
-*  `Name: cloudfront_g` and `AutoUpdate: true` and a `Protocol` tag with value `http` or `https`.
-*  `Name: cloudfront_r` and `AutoUpdate: true` and a `Protocol` tag with value `http` or `https`.
+*  `Name: cloudfront`,`AutoUpdate: true`, `Region` tag with `global` (for global region) or `region` (for non-global region), and `Protocol` tag with value `http` or `https`.
 
 **Note:** For CloudFront to properly connect to your origin over HTTP or HTTPS only, you will need two security groups with `Name: cloudfront_g` and `Name: cloudfront_r` set for http or https depending on the protocol used. If you require both HTTP and HTTPS protocols to your origin, you will need a total of 4 security groups.
 
